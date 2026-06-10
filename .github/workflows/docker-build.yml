@@ -49,8 +49,9 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./dashboard
+          file: ./dashboard/Dockerfile.traefik
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.DASHBOARD_IMAGE_NAME }}:latest
+          tags: ${{ env.REGISTRY }}/${{ env.DASHBOARD_IMAGE_NAME }}:traefik-latest
           labels: |
             org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             org.opencontainers.image.revision=${{ github.sha }}
